@@ -128,7 +128,7 @@ def sum_of_digits(number):
 def test_digits_in_cube():
     """ Tests the   digits_in_cube   function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function.
+    # DONE: 3. Implement this function.
     #   It TESTS the  digits_in_cube  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -156,17 +156,17 @@ def test_digits_in_cube():
     expected1 = 8
     answer1 = digits_in_cube(5)
     print('Test 1 expected:', expected1)
-    print('       actual:',   answer1)
+    print('       actual:  ', answer1)
 
     expected2 = 10
     answer2 = digits_in_cube(7)
     print('Test 2 expected:', expected2)
-    print('       actual:',   answer2)
+    print('       actual:  ', answer2)
 
     expected3 = 8
     answer3 = digits_in_cube(11)
     print('Test 3 expected:', expected3)
-    print('       actual:',   answer3)
+    print('       actual:  ', answer3)
 
 
 def digits_in_cube(number):
@@ -196,7 +196,7 @@ def digits_in_cube(number):
 def test_digits_in_power():
     """ Tests the   digits_in_power   function. """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this function.
+    # DONE: 5. Implement this function.
     #   It TESTS the  digits_in_power  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -210,17 +210,17 @@ def test_digits_in_power():
     expected1 = 8
     answer1 = digits_in_power(2, 3)
     print('Test 1 expected:', expected1)
-    print('       actual:  ', answer1)
+    print('       x =      ', answer1)
 
     expected2 = 8
     answer2 = digits_in_power(5, 3)
     print('Test 2 expected:', expected2)
-    print('       actual:  ', answer2)
+    print('       x =      ', answer2)
 
     expected3 = 1
     answer3 = digits_in_power(10, 4)
     print('Test 3 expected:', expected3)
-    print('       actual:  ', answer3)
+    print('       x =      ', answer3)
 
 
 def digits_in_power(n, k):
@@ -254,7 +254,7 @@ def digits_in_power(n, k):
 def test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement this function.
+    # DONE: 7. Implement this function.
     #   It TESTS the  fancy_sums_of_digits  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -267,19 +267,29 @@ def test_fancy_sums_of_digits():
     print('--------------------------------------------------')
 
     expected1 = 1
-    answer1 = fancy_sums_of_digits(10)
+    answer1 = fancy_sums_of_digits(1)
     print('Test 1 expected:', expected1)
     print('       actual   ', answer1)
 
-    expected2 = 124309
-    answer2 = fancy_sums_of_digits(35)
+    expected2 = 19084
+    answer2 = fancy_sums_of_digits(2)
     print('Test 2 expected:', expected2)
     print('       actual   ', answer2)
 
-    expected3 = 19084
-    answer3 = fancy_sums_of_digits(2)
+    expected3 = 124309
+    answer3 = fancy_sums_of_digits(35)
     print('Test 3 expected:', expected3)
     print('       actual   ', answer3)
+
+    # expected2 = 124309
+    # answer2 = fancy_sums_of_digits(35)
+    # print('Test 2 expected:', expected2)
+    # print('       actual   ', answer2)
+    #
+    # expected3 = 19084
+    # answer3 = fancy_sums_of_digits(2)
+    # print('Test 3 expected:', expected3)
+    # print('       actual   ', answer3)
     # ------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
     # the correct (expected) answer for that test case.  (It's easy.)
@@ -313,12 +323,16 @@ def fancy_sums_of_digits(n):
             -- the sum of the digits in (X ** Y) is 124309 (trust me!)
             -- so this function returns 124309.
     """
-    if n < 0:
-        n = -n
-    x = n**1000
-    y = n**999
+
+    number = n**1000
+    x = sum_of_digits(number)
+
+    number = n**999
+    y = sum_of_digits(number)
+
     number = x**y
     sum_of_digits(number)
+
     return sum_of_digits(number)
 
 
